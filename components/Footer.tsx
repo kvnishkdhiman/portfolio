@@ -40,7 +40,7 @@ export default function Footer() {
           className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16"
         >
           <a
-            href="mailto:kanishk@email.com"
+            href="mailto:dhimankanishk21@gmail.com"
             className="group flex items-center gap-3"
           >
             <div className="w-8 h-[1px] bg-[var(--color-accent)] group-hover:w-12 transition-all duration-300" />
@@ -50,7 +50,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://linkedin.com/in/kanishk"
+            href="https://www.linkedin.com/in/kanishk-dhiman-67457b252/"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3"
@@ -88,7 +88,7 @@ export default function Footer() {
           transition={{ delay: 1 }}
           className="mt-6 text-[var(--color-secondary)] text-[12px] uppercase tracking-[0.3em] font-heading"
         >
-          © 2025 Kanishk. All rights reserved.
+          © 2025 Kanishk Dhiman. All rights reserved.
         </motion.p>
       </div>
     </footer>

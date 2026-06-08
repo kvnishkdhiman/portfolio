@@ -40,7 +40,7 @@ export default function Navigation() {
               href="#"
               className="font-heading text-[18px] font-bold tracking-tight text-[var(--color-accent)]"
             >
-              KANISHK
+              KANISHK DHIMAN
             </a>
 
             {/* Desktop nav */}
