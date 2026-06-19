@@ -18,7 +18,7 @@ export default function Hero() {
         <h1 
           className="font-sans font-black tracking-tighter uppercase"
           style={{ 
-            fontSize: "clamp(60px, 10vw, 150px)",
+            fontSize: "clamp(32px, 6vw, 80px)",
             lineHeight: 0.9,
             color: "#0A0A0A", // Solid Black
           }}
