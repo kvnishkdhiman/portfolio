@@ -4,13 +4,13 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const SKILLS = [
-  { name: "MACHINE LEARNING", accent: false },
-  { name: "DEEP LEARNING", accent: true },
-  { name: "DATA SCIENCE", accent: false },
-  { name: "SYSTEM DESIGN", accent: false },
-  { name: "QUANTITATIVE RESEARCH", accent: true },
-  { name: "PYTHON", accent: false },
-  { name: "NEURAL NETWORKS", accent: true },
+  "PYTHON & PYTORCH",
+  "ALGORITHMIC TRADING",
+  "MACHINE LEARNING",
+  "FASTAPI & SQL",
+  "RAG PIPELINES",
+  "MODEL COMPRESSION",
+  "SYSTEM DESIGN",
 ];
 
 export default function Skills() {
@@ -21,57 +21,39 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative px-6 md:px-12 lg:px-20 py-32 md:py-48"
+      className="relative min-h-screen px-6 md:px-12 lg:px-20 py-24 md:py-32 section-dark flex flex-col justify-center"
     >
-      <div className="max-w-[1400px] mx-auto">
-        {/* Subtle label */}
+      <div className="max-w-[1200px] mx-auto w-full relative z-10">
+        {/* Label bar */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="mb-14 flex items-center gap-6"
         >
-          <div className="w-8 h-[1px] bg-[var(--color-accent)]" />
-          <span className="text-[var(--color-secondary)] text-[13px] uppercase tracking-[0.2em] font-heading">
-            What I Do
+          <span className="font-dot text-[13px] tracking-wider text-[var(--color-muted)]">
+            WHAT I DO
           </span>
+          <div className="flex-1 h-[1px] bg-white/10" />
         </motion.div>
 
-        {/* Giant typographic skills */}
-        <div className="space-y-2 md:space-y-0">
+        {/* Stacked dot-matrix skills */}
+        <div className="flex flex-col gap-6 md:gap-8">
           {SKILLS.map((skill, i) => (
             <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -80 : 80 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              key={skill}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.8,
-                delay: i * 0.1,
+                duration: 0.7,
+                delay: i * 0.08,
                 ease: [0.77, 0, 0.175, 1],
               }}
-              className="group relative overflow-hidden"
+              className="group"
             >
-              <div className="flex items-center justify-between py-2 md:py-3 border-b border-[var(--color-primary)]/5">
-                <h3
-                  className={`font-heading text-skill transition-colors duration-500 ${
-                    skill.accent
-                      ? "text-[var(--color-accent)]"
-                      : "text-[var(--color-primary)]"
-                  } group-hover:text-[var(--color-accent)]`}
-                >
-                  {skill.name}
-                </h3>
-
-                {/* Hover arrow */}
-                <motion.span
-                  className="text-[var(--color-accent)] text-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block"
-                >
-                  →
-                </motion.span>
-              </div>
-
-              {/* Hover underline effect */}
-              <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[var(--color-accent)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <h3 className="font-dot text-skill text-white/90 hover:text-white/40 transition-colors duration-300 leading-[1.05] cursor-default break-words">
+                {skill}
+              </h3>
             </motion.div>
           ))}
         </div>

@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { Inter_Tight } from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import "./globals.css";
 
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
+const courierPrime = Courier_Prime({
+  variable: "--font-courier-prime",
+  weight: ["400", "700"],
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Kanishk — Machine Learning Engineer",
+  title: "Kanishk — AI/ML Engineer",
   description:
-    "Building intelligent systems. Machine Learning Engineer specializing in deep learning, data science, and quantitative research.",
+    "Building intelligent systems. AI/ML Engineer specializing in deep learning, systematic trading, and edge AI.",
   keywords: [
     "Machine Learning",
     "Deep Learning",
     "Data Science",
     "AI Engineer",
+    "Systematic Trading",
     "Portfolio",
   ],
-  authors: [{ name: "Kanishk" }],
+  authors: [{ name: "Kanishk Dhiman" }],
   openGraph: {
-    title: "Kanishk — Machine Learning Engineer",
+    title: "Kanishk — AI/ML Engineer",
     description: "Building intelligent systems.",
     type: "website",
   },
@@ -33,8 +34,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${interTight.variable} antialiased`}>
-      <body className="min-h-screen bg-[var(--color-bg)] text-[var(--color-primary)]">{children}</body>
+    <html lang="en" className={`${courierPrime.variable} antialiased`}>
+      <body className="min-h-screen bg-[var(--color-bg-dark)] text-[var(--color-text-light)]">
+        {/* Force hot reload check */}
+        <div className="dot-grid-overlay" />
+        {children}
+      </body>
     </html>
   );
 }

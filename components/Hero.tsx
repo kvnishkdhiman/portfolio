@@ -1,75 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TextReveal from "./TextReveal";
-import PortraitComposition from "./PortraitComposition";
-
-const HERO_WORDS = [
-  { text: "BUILDING", color: "text-[var(--color-primary)]" },
-  { text: "INTELLIGENT", color: "text-[var(--color-accent)]" },
-  { text: "SYSTEMS", color: "text-[var(--color-primary)]" },
-];
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden px-6 md:px-12 lg:px-20 py-20"
+      className="relative h-screen min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#F1F1F1]"
     >
-      {/* Left — Massive statement text */}
-      <div className="flex-1 relative z-10">
-        <div className="mb-6">
-          {HERO_WORDS.map((word, i) => (
-            <motion.div
-              key={word.text}
-              initial={{ x: -120, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{
-                duration: 1,
-                delay: 0.3 + i * 0.15,
-                ease: [0.77, 0, 0.175, 1],
-              }}
-            >
-              <h1
-                className={`font-heading font-bold text-[50px] sm:text-[80px] md:text-[90px] lg:text-[110px] xl:text-[130px] uppercase ${word.color}`}
-              >
-                {word.text}
-              </h1>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-[var(--color-secondary)] text-[16px] md:text-[18px] max-w-[360px] leading-relaxed mt-8"
-          style={{ fontFamily: "var(--font-body)" }}
+      {/* Name on the Left */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 1, ease: [0.77, 0, 0.175, 1] }}
+        className="relative z-10 w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center text-left px-6 md:pl-20 md:pr-10 pt-32 md:pt-0"
+      >
+        <h1 
+          className="font-serif font-bold uppercase"
+          style={{ 
+            fontSize: "clamp(50px, 8vw, 150px)",
+            lineHeight: 0.95,
+            color: "#808080", // Bold Grey
+            letterSpacing: "-0.02em",
+          }}
         >
-          Machine Learning Engineer crafting intelligent systems
-          that bridge research and production.
-        </motion.p>
-      </div>
+          KANISHK<br />DHIMAN
+        </h1>
+      </motion.div>
 
-      {/* Right — Portrait composition */}
-      <div className="hidden lg:flex flex-1 justify-end items-center relative z-10 lg:pr-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1.5, delay: 0.8, ease: [0.77, 0, 0.175, 1] }}
-          className="relative z-20 pointer-events-none"
-        >
-          <PortraitComposition variant="hero" />
-
-
-        </motion.div>
-      </div>
-
-
-      {/* Mobile portrait — shown below text on small screens */}
-      <div className="lg:hidden absolute bottom-10 right-6 opacity-40">
-        <PortraitComposition variant="about" />
-      </div>
+      {/* Photo on the Right */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
+        className="relative z-0 w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-end p-0 md:p-8"
+      >
+        <img 
+          src="/images/portrait4.png" 
+          alt="Kanishk Dhiman" 
+          className="w-full h-full object-contain object-right"
+        />
+      </motion.div>
     </section>
   );
 }
