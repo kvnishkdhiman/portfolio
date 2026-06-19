@@ -9,7 +9,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Achievements from "@/components/Achievements";
-import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
         <Projects />
         <Education />
         <Achievements />
-        <Footer />
+        <Contact />
       </main>
     </SmoothScroll>
   );
