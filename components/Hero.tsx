@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#F1F1F1]"
+      className="relative h-screen min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden bg-[#E5E0DE] z-[10000]"
     >
       {/* Name on the Left */}
       <motion.div
@@ -16,12 +16,11 @@ export default function Hero() {
         className="relative z-10 w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center text-left px-6 md:pl-20 md:pr-10 pt-32 md:pt-0"
       >
         <h1 
-          className="font-serif font-bold uppercase"
+          className="font-sans font-black tracking-tighter uppercase"
           style={{ 
-            fontSize: "clamp(50px, 8vw, 150px)",
-            lineHeight: 0.95,
-            color: "#808080", // Bold Grey
-            letterSpacing: "-0.02em",
+            fontSize: "clamp(60px, 10vw, 150px)",
+            lineHeight: 0.9,
+            color: "#0A0A0A", // Solid Black
           }}
         >
           KANISHK<br />DHIMAN
@@ -33,12 +32,13 @@ export default function Hero() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
-        className="relative z-0 w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-end p-0 md:p-8"
+        className="relative z-0 w-full md:w-1/2 h-1/2 md:h-full flex items-end justify-end p-0 md:pr-8"
       >
         <img 
           src="/images/portrait4.png" 
           alt="Kanishk Dhiman" 
-          className="w-full h-full object-contain object-right"
+          className="w-full h-full object-contain"
+          style={{ objectPosition: "65% bottom" }}
         />
       </motion.div>
     </section>
