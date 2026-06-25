@@ -277,3 +277,13 @@ body {
   background-size: 80px 80px !important;
   mix-blend-mode: difference !important;
 }
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333333%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-33.333333%); }
+  100% { transform: translateX(0); }
+}

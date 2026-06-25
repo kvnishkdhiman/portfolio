@@ -9,6 +9,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Achievements from "@/components/Achievements";
+import Certificates from "@/components/CertificateGallery";
 import Contact from "@/components/Contact";
 import MusicPlayer from "@/components/MusicPlayer";
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Projects />
         <Education />
         <Achievements />
+        <Certificates />
         <Contact />
       </main>
     </SmoothScroll>

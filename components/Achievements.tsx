@@ -88,7 +88,7 @@ export default function Achievements() {
         className="absolute right-[-200px] md:right-[-350px] lg:right-[-450px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] md:w-[900px] md:h-[900px] lg:w-[1100px] lg:h-[1100px] pointer-events-none select-none z-10"
       >
         <div
-          className="w-full h-full rounded-full bg-cover bg-center shadow-[0_0_120px_rgba(255,255,255,0.03)] border border-white/5 relative"
+          className="w-full h-full rounded-full bg-cover bg-center relative"
           style={{
             backgroundImage: "url('/images/moon.png')",
           }}
